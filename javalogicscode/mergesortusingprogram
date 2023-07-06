@@ -1,0 +1,116 @@
+QUESTION: Count of smaller elements on right side of each element in an Array using Merge sort:
+
+
+qstn: Given an integer array nums, return an integer array counts where counts[i] is the number of smaller elements to the right of nums[i].
+ ex: 
+ Input: nums = [5,2,6,1]
+Output: [2,1,1,0]
+Explanation:
+To the right of 5 there are 2 smaller elements (2 and 1).
+To the right of 2 there is only 1 smaller element (1).
+To the right of 6 there is 1 smaller element (1).
+To the right of 1 there is 0 smaller element.
+
+
+
+
+Java Pseudo code:
+           *initialize an array
+          *pair(new count arr):array element and value
+            *mid:left
+             *end:right
+             *rightcount:right side smaller element.
+count-smaller element count stored
+count method create to stored left,right array value.
+    *for loop use find count of the element
+    *while loop using execution of mergesort
+    *mergecount=left from start to mid
+    *mergecount=right from mid+1 to end
+    *finally create mergecount method to find count and smaller element.
+     *    mid = (start + end) / 2;//mid valu find formula
+       * mergeSortAndCount(pairs, start, mid, counts);
+        *mergeSortAndCount(pairs, mid + 1, end, counts);
+     * mergeAndCount(pairs, start, mid, end, counts);
+     
+     
+  code:
+  
+  
+  import java.util.Arrays;
+
+class Solution {
+    static class Pair {
+        int element;
+        int value;
+//pair:arr(element,value)
+        public Pair(int element, int value) {
+            this.element = element;
+            this.value = value;
+        }
+    }
+//new arr and new int count find
+    public List<Integer> countSmaller(int[] nums) {
+        int n = nums.length;
+        Pair[] pairs = new Pair[n];
+        Integer[] counts = new Integer[n];
+
+        for (int i = 0; i < n; i++) { //loop use new arr pair count find
+            pairs[i] = new Pair(nums[i], i);
+            counts[i] = 0;
+        }
+
+        mergeSortAndCount(pairs, 0, n - 1, counts);
+
+        return Arrays.asList(counts);
+    }
+
+    private int mergeAndCount(Pair[] pairs, int frst, int mid, int last, Integer[] counts) {
+        Pair[] left = Arrays.copyOfRange(pairs, frst, mid + 1);
+        Pair[] right = Arrays.copyOfRange(pairs, mid + 1,  last + 1);
+
+        int i = 0, j = 0, k = frst, rightCount = 0;
+//sort element
+  while (i < left.length && j < right.length) {
+     if (left[i].element <= right[j].element) {
+   pairs[k] = left[i];
+    counts[left[i].value] += rightCount;
+      i++;
+     }
+		  else {
+            pairs[k] = right[j];
+           j++;
+            rightCount++;
+      }
+     k++;
+        }
+
+    while (i < left.length) {
+      pairs[k] = left[i];
+     counts[left[i].value] += rightCount;
+      i++;
+     k++;
+        }
+
+        while (j < right.length) {
+     pairs[k] = right[j];
+    j++;
+      k++;
+     }
+
+     return rightCount;
+    }
+
+    private void mergeSortAndCount(Pair[] pairs, int frst, int  last, Integer[] counts) {
+        if (frst >=  last) {
+      return;
+        }
+
+  int mid = (frst +  last) / 2;
+
+   mergeSortAndCount(pairs, frst, mid, counts);
+   mergeSortAndCount(pairs, mid + 1,  last, counts);
+
+  mergeAndCount(pairs, frst, mid, last, counts);
+    }
+}   
+

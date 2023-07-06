@@ -1,0 +1,86 @@
+1)Question
+Given an array of size n, sort the array using Merge Sort.
+
+devide and conqueue
+
+
+Pseudo code:
+            *GIven array element(index value (start0)fixed that array value).
+*f(frst)M(mid),L(last)
+         *Sort(array,f,l){
+         *IF(f<l)
+         *mid=(f+l)/2   =>mid value find formula
+        sort(arr,f,MID)
+        sort(arr,MID+1,l)
+        Merge(arr,f+MID+l)
+}
+ *merge sort end 
+
+
+
+
+
+java code:
+import java.util.ArrayList;
+import java.util.Scanner;
+class Sorting{
+    private static void merge(int[] arr, int frst, int mid, int last) {
+        //collection arraylist Syntax,many array stored in array list,
+        //ArrayList<string>a=new Arraylist<string>();    //temporary array ,dynamic array for storing value stored
+        ArrayList<Integer> temp = new ArrayList<>();
+         // index left mid
+        int left = frst;
+        //index right mid
+        int right = mid + 1;
+     //temporary array stored element
+        while (left <= mid && right <= last) {
+            if (arr[left] <= arr[right]) {
+                temp.add(arr[left]);
+                left++;
+            } else {
+                temp.add(arr[right]);
+                right++;
+            }
+        }
+        while (left <= mid) {      //left mid left
+            temp.add(arr[left]);
+            left++;
+        }
+        while (right <= last) {    //right mid left
+            temp.add(arr[right]);
+            right++;
+        }
+  //move all elements from temporary to arr
+        for (int i = frst; i <= last; i++) {
+            arr[i] = temp.get(i - frst);
+        }
+    }
+    public static void mergeSort(int[] arr, int frst, int last) {
+        if (frst >= last) return;
+        int mid = (frst + last) / 2 ;
+        //left mid
+        mergeSort(arr, frst, mid);
+        //right mid
+        mergeSort(arr, mid + 1, last);
+        //merge sort
+        merge(arr, frst, mid, last);
+    }
+}
+public class mergeSort {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int n = 6;
+        int arr[] = { 5,4,1,3,9,7};
+        System.out.println("Sort Before: ");
+        for (int i = 0; i < n; i++) {
+            System.out.print(arr[i] + " ");  //print before sort array
+        }
+        System.out.println();
+        Sorting.mergeSort(arr, 0, n - 1);
+        System.out.println("Sort After: ");   //print after sort array
+        for (int i = 0; i < n; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+}

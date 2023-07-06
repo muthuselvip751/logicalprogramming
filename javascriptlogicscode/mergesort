@@ -1,0 +1,77 @@
+QSTN:
+Count of smaller elements on right side of each element in an Array using Merge sort
+
+
+Given an integer array nums, return an integer array counts where counts[i] is the number of smaller elements to the right of nums[i].
+ ex: 
+ Input: nums = [5,2,6,1]
+Output: [2,1,1,0]
+Explanation:
+To the right of 5 there are 2 smaller elements (2 and 1).
+To the right of 2 there is only 1 smaller element (1).
+To the right of 6 there is 1 smaller element (1).
+To the right of 1 there is 0 smaller element.
+
+
+
+Pseudocode:
+      
+         *initialize variable.
+         *create new arr for lop use loop for all the element.
+         *function create (frst,mid,last)and temp varialble craete to stored variable.
+         *for loop use this loop find compare element( i-mid&&j-last(i>=frst && j>=mid+1  )
+         *loop use add,count find,initial value insert,merger value (condition )
+       *for  loop use merge frst and last arr.
+       loop use push new element,temp[ value push.
+       *loop execute only for condition check...not add initial index value
+        condition:
+      mid = (frst +last) >> 1;
+      mergeSort(frst, mid);
+      mergeSort(mid + 1, last);
+      merge(frst, mid, last);
+
+
+ Code:
+
+
+    var countSmaller = function(nums) {
+    let n = nums.length, nums1 = [];// empty array nums1
+    for(let i = 0; i < n; i++) { //iterate all element arr
+        nums1.push([i, nums[i]]);
+        nums[i] = 0;//initial new arr is 0
+        //new arr
+    }
+    const merge = (frst, mid, last) => {
+        // tmp variable stored
+        let tmp = [], i = frst, j = mid + 1;
+        //compare element
+        for(let i = mid, j = last ; i >= frst && j >= mid+1; ) {
+            if(nums1[i][1] > nums1[j][1]) {
+                nums[nums1[i][0]] += j - mid;
+        i--;
+            }
+            else j--;
+        }
+        //arr  push new element
+        //initialization,increment and decrement does not add,only condition add
+        for(let i=0 ; i <= mid && j <= last;i++ ) {
+     if(nums1[i][1] > nums1[j][1]) tmp.push(nums1[j++]);
+            else tmp.push(nums1[i++]);
+        }
+        // push remaining elements
+        //initial value not found
+    for( ; i <= mid; i++) tmp.push(nums1[i]);
+      for( ; j <= last; j++) tmp.push(nums1[j]);
+      for(let i = 0; i < tmp.length; i++, frst++) nums1[frst] = tmp[i];
+    }
+    //merge sort condition
+const mergeSort = (frst, last) => {
+        if(frst >= last) return;
+let mid = (frst +last) >> 1;
+ mergeSort(frst, mid);
+     mergeSort(mid + 1, last);
+   merge(frst, mid, last);
+    }
+    mergeSort(0, n-1);
+return nums;
+};      
