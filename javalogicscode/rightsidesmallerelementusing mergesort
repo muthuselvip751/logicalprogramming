@@ -1,7 +1,7 @@
 QUESTION: Count of smaller elements on right side of each element in an Array using Merge sort:
 
 
-qstn: Given an integer array nums, return an integer array counts where counts[i] is the number of smaller elements to the right of nums[i].
+Question: Given an integer array nums, return an integer array counts where counts[i] is the number of smaller elements to the right of nums[i].
  ex: 
  Input: nums = [5,2,6,1]
 Output: [2,1,1,0]
