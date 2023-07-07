@@ -8,4 +8,29 @@ Pseudocode:
      5)if(max),else if (smax)
      6)end
 
+
+
+ CODE:
+
+class Largestelement {
+    public static void main(String[] args) {
+        int a[]={1,2,0,3,2,4,5};
+      int max=a[0],smax=a[0];
+      for(int i=0;i<a.length;i++)
+      {
+          if(max<a[i])
+          {
+              smax=max;
+              max=a[i];
+          }
+          else if(smax<a[i])
+          {
+              smax=a[i];
+              }
+      }
+              System.out.println("1st max:"+max);
+              System.out.println("2nd max:"+smax);
+    }
+}
+
  
