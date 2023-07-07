@@ -1,0 +1,11 @@
+qstn:First and Second Max value find for given array value:
+
+Pseudocode:
+     1)initialize an array
+     2)arr index valkue start 0,max,smax value [0]stored new arr
+     3)loop all arr element(check all elemant one by one)
+     4)use if,else if condition check all value and then that condion
+     5)if(max),else if (smax)
+     6)end
+
+ 
