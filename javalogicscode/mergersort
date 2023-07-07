@@ -38,7 +38,7 @@ Pseudo code:
 
 
 
-
+example code for merge sort:
 
 java code:
 import java.util.ArrayList;
