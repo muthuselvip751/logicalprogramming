@@ -1,0 +1,26 @@
+Qntn: Find the missing number in an array?
+
+
+Pseudo code:
+
+  * find total number length
+  * use formula for find totalnum(n*(n+1)/2)
+  * reduce total number and sum of number that reduce value is missing number
+    
+
+
+code:
+
+
+     public class Solution {
+    public static int missingNumber(int[] nums) {
+      int n= nums.length;
+      int totalSum=n*(n+1)/2;
+      int sum=0;
+      for(int i:nums){
+          sum+=i;
+      }
+      return totalSum-sum;
+      }
+}
+   
