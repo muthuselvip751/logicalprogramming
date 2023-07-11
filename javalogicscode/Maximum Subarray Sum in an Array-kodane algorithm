@@ -1,0 +1,25 @@
+Kadane’s Algorithm:
+
+           
+ * it's actually solving a subproblem, saving the solution somewhere,
+        and then the next time the same subproblem occurs, 
+            rather than solving it again, using the previous solution from the memory.
+
+
+QSTN:   Kadane’s Algorithm : Maximum Subarray Sum in an Array
+
+
+PSEUDOCODE:
+       
+     * initialize overall max sum.
+     * temporary sum
+     * for loop use iterate sum
+     *  tempsum and max sum find 
+
+
+
+
+
+      
+
+    
