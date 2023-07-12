@@ -1,0 +1,62 @@
+qstn:
+   Reverse a words in string
+
+
+Pseudocode:
+      1)string legnthfind and stored in N 
+      2)loop the string value and iterate reduce that legth value(n-1)
+      3)charAt() method returns the character at the specified index in a string. 
+      4)append method use add data in a file.
+      5)that string value can modified use(string builder)
+      6)print modified (currect value)in reverse order 
+
+
+
+
+code:
+    
+class Solution {
+    public String reverseWords(String s) {
+        StringBuilder result = new StringBuilder();
+        StringBuilder current = new StringBuilder();
+        int N = s.length();
+        
+        for(int i = N - 1; i >= 0; i--) {
+            current.setLength(0);
+             while(i >= 0 && s.charAt(i) != ' ') {
+                current.append(s.charAt(i));
+                i--;
+            }
+            if(current.length() > 0) {
+                result.append(result.length() == 0 ? "": " ");
+                result.append(current.reverse().toString());
+            }
+        }
+ return result.toString();
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+// qstn/ans:
+
+1)What is StringBuilder vs string?
+     * String is immutable whereas StringBuffer and StringBuilder are mutable classes.
+2)string builder:
+     * StringBuilder objects are like String objects, except that they can be modified.
+
+3)Why do we use StringBuilder?
+
+    * StringBuilder class can be used when you want to modify a string without creating a new object. 
+    * For example, using the StringBuilder class can boost performance when concatenating many strings together in a loop.
+
+
+
+charAt() method returns the character at the specified index in a string. 

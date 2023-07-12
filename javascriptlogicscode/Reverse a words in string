@@ -1,0 +1,52 @@
+qstn:
+   Reverse a words in string
+
+
+Pseudocode:
+      1)string legnthfind and stored in N 
+      2)loop the string value and iterate reduce that legth value(n-1)
+      3)split that string value.
+      4)rev and trim use print that word rev order
+      
+
+
+
+
+code:
+    
+var reverseWords = function(s) {    
+    let reverse = '';
+    let words = s.split(' ');
+    
+    for( let i = words.length-1; i >= 0; i-- ) {
+         if( words[i] == '' ) {
+             continue;
+         } 
+         reverse += words[i] + ' ';               
+    }
+    
+    return reverse.trim();
+};
+
+
+
+
+
+
+
+
+
+
+1)What is StringBuilder vs string?
+     * String is immutable whereas StringBuffer and StringBuilder are mutable classes.
+2)string builder:
+     * StringBuilder objects are like String objects, except that they can be modified.
+
+3)Why do we use StringBuilder?
+
+    * StringBuilder class can be used when you want to modify a string without creating a new object. 
+    * For example, using the StringBuilder class can boost performance when concatenating many strings together in a loop.
+
+
+
+charAt() method returns the character at the specified index in a string. 
