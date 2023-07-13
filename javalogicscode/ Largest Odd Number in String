@@ -1,0 +1,31 @@
+ Largest Odd Number in String
+
+
+
+Pseudocode:
+
+       * integer n stored string legth value
+       * iterate the string length( for loop)...decrease string length i=n-1.
+       * if statement use num[i]%2 == 1 that condition is true return string value.else its false
+
+
+
+
+
+ code:
+
+       class Solution {
+    public String largestOddNumber(String num) {
+
+        int n = num.length();
+        for(int i=n-1;i>=0;i--){
+
+            if((num.charAt(i) - '0')%2 == 1)
+                return num.substring(0,i+1);
+         }
+
+        return "";
+    }
+}
+
+      
