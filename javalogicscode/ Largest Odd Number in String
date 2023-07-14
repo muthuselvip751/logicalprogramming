@@ -14,7 +14,7 @@ Pseudocode:
 
  code:
 
-       class Solution {
+    class Solution {
     public String largestOddNumber(String num) {
 
         int n = num.length();
@@ -27,5 +27,3 @@ Pseudocode:
         return "";
     }
 }
-
-      
