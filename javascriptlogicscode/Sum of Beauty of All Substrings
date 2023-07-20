@@ -8,9 +8,15 @@ Pseudocode:
        1)Initialize in string length.
        2)array size is 26 fill(0)to start.
        3)use nested loop to looping all substring 
+<<<<<<< HEAD
        4).array 26 element in min and max frequency value find 
        5). differnce function create filter use min and max value 
        6).return filtered ans
+=======
+       4)array 26 element in min and max frequency value find 
+       5) differnce function create filter use min and max value 
+       6)return filtered ans
+>>>>>>> 855b4d0 (updated)
 
 
 
