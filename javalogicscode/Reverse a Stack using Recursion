@@ -1,0 +1,49 @@
+Reverse a Stack using Recursion:
+
+
+Pseudo code:
+
+
+   1.stack create push all value
+   2.reverse function call ...pop all element in stack ,popped all value to functon 
+   3.that function create insert_at_bottom()
+   4.that value insert the passed element at the bottom of the stack.
+   5.result value stack
+
+
+code:
+
+     import java.utill.stack;
+
+     class Test {
+        static stack<character>st = new stack<>();
+        static void insert_at_bottom(char x){
+            if(st.isEmpty())
+            st.push(x);
+            else{
+                char a=st peek();
+                st.pop();
+                insert_at_bottom(x);
+                st.push(a);
+            }
+        }
+        static void reverse(){
+            if(st.size()>0){
+                char x=st.peek();
+                st.pop();
+                reverse();
+                insert_at_bottom(x);
+            }
+        }
+public static void main(string[]args){
+    st.push('1');
+    st.push('2');
+    st.push('3');
+    system.out.println("original stack")
+    system.out.println(st)
+    reverse()
+    system.out.println("reverse stack")
+system.out.println(st);
+}
+
+     }
