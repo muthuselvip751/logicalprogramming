@@ -1,0 +1,24 @@
+
+
+Count good numbers:
+
+
+Pseudo code:
+       1.count add and even number.in N
+       2.power mode N number even->N+1/2 , odd->n/2.
+       3.even indices->5,odd indices->4.
+       4.powmod count even and even indices.
+       5.return powmod number.
+     
+
+    #  my reff:
+
+    #         0,1,2,3,4,5,6,7,8,9
+
+    #         even indices:5
+    #         odd indices:4
+
+    #  0,1,2,3,4     => n+1/2 =>odd     ,  n/2=>even
+
+    #  pow(5,even)
+    #  pow(4,odd)       
