@@ -22,3 +22,29 @@ Pseudo code:
 
     #  pow(5,even)
     #  pow(4,odd)       
+
+
+Code:
+     
+     const ll = BigInt;
+     const int = parseInt;
+     const mod = ll(1e9 + 7);
+     const powmod = (a, b, mod) => 
+{
+     let r = 1n; while (b > 0n)
+      {
+           if (b % 2n == 1) r = r * a % mod; 
+           b >>= 1n; a = a * a % mod;
+            }
+             return r; 
+             };
+
+   const countGoodNumbers = (n) =>
+ {
+    let countEven = countOdd = int(n / 2);
+    //odd => n+1/2   --->   even=>n/2
+    if (n % 2 == 1) countEven++;
+    let res = powmod(5n, ll(countEven), mod) * powmod(4n, ll(countOdd), mod);
+    return Number(res % mod);
+};
+    
