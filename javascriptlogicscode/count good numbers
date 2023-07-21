@@ -29,7 +29,7 @@ Code:
      const ll = BigInt;
      const int = parseInt;
      const mod = ll(1e9 + 7);
-     const powmod = (a, b, mod) => 
+     const powm-od = (a, b, mod) => 
 {
      let r = 1n; while (b > 0n)
       {

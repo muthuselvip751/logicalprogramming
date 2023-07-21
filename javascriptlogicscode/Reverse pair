@@ -1,0 +1,39 @@
+Reverse pair:
+
+
+   Pseudocode:
+
+     1.function to rev number
+      2.loop use iterate the value 
+      3.find num length and arry value length and temp value find
+      4. another function is count reverser.
+      5.(reverse(arr[i]) == arr[j])
+      
+
+
+    code:
+    function reverse(num)
+{
+	var rev_num = 0;
+	while (num > 0) {
+	rev_num = rev_num * 10 + num % 10;
+	num = parseInt(num / 10);
+	}
+	return rev_num;
+}
+function countReverse(arr, n)
+{
+	var res = 0;
+	for (var i = 0; i < n; i++)
+		for (var j = i + 1; j < n; j++)
+			if (reverse(arr[i]) == arr[j]) {
+				res++;
+			}
+
+	return res;
+}
+var a = [ 16, 61, 12, 21, 25 ];
+var n = a.length;
+document.write( countReverse(a, n))
+
+
