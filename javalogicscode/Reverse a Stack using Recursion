@@ -16,7 +16,7 @@ code:
      import java.utill.stack;
 
      class Test {
-        static stack<character>st = new stack<>();
+        static stack<Character>st = new stack<>();
         static void insert_at_bottom(char x){
             if(st.isEmpty())
             st.push(x);
@@ -47,3 +47,10 @@ system.out.println(st);
 }
 
      }
+
+
+
+     ex:
+
+     o/p  =>    Original stack:1234567
+                Reversed stack:7654321
