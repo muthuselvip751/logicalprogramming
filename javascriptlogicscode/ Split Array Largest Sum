@@ -8,3 +8,32 @@ Pseudocode:
         3.check and split array for current sum(m).
         4.compare min and max ....find that value count numnber fot min and max m value for the sum.
         5.max and min value to low/high (mid+1) find pair count value fot he sum and return ans.
+
+
+code:        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MY NOTES:
+
+  1)   Math floor ():
+             
+            * The Math.floor() static method always rounds down and returns the largest integer less
+                than or equal to a given number.
