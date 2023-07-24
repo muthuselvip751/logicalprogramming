@@ -1,0 +1,10 @@
+Split Array Largest Sum:
+
+               
+Pseudocode:
+
+        1.split value find min and max value of the sum.
+        2.binary search use to find max and min.
+        3.check and split array for current sum(m).
+        4.compare min and max ....find that value count numnber fot min and max m value for the sum.
+        5.max and min value to low/high (mid+1) find pair count value fot he sum and return ans.
