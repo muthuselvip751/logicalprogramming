@@ -18,11 +18,12 @@ code:
 class Solution {
     public String largestOddNumber(String num) { // "12345"
          int n = num.length(); //5 //length of the input num
-        for(int i=n-1;i>=0;i--){ //4
-            if((num.charAt(i)-'0')%2 == 1)
-            return num.substring(0,i+1);
+        for(int i=n-1;i>=0;i--){ //4 //Iterate through the string from the last character to the first.
+            if((num.charAt(i)-'0')%2 == 1) // Check if the digit at index i is odd //modulus %(remainder)
+            //'0'-parseInt(replace)string convert into integer
+            return num.substring(0,i+1); //return the substring from the beginning up to the odd digit.
         }
-        return "";
+        return ""; //Return an empty string if there are no odd digits in the input 'num'
         
     }
 }
