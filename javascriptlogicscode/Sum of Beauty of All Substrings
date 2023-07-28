@@ -1,19 +1,50 @@
 
 qstn: Sum of Beauty of All Substrings
 
+My Reffernce:
 
+1)charCodeAt() 
+        * The method returns the Unicode of the character at a specified index (position) in a string.
+
+
+2)Filter:                                                  
+  
+   * filter creates a new array by removing                  
+   * elements that don't belong.                            
+     
+
+3)Map :
+   *Map creates a new array by transforming every in an array individually
+
+
+
+4)fill()
+  *  The fill() method fills specified elements in an array with a value.
+  * The fill() method overwrites the original array.
+
+5)  Math.max()
+   * static method returns the largest of the numbers given as input parameters,
+           or - Infinity if there are no parameters.
+
+6) The Math.min()
+    * static method returns the smallest of the numbers given as input parameters, or 
+          Infinity if there are no parameters.           
+
+7) Min/Max diff:
+   * max() returns the maximum number passed in an array whereas Math. 
+   * min() returns the minimum number passed
 
 
 Pseudocode:
-       1)Initialize in string length.
-       2)array size is 26 fill(0)to start.
-       3)use nested loop to looping all substring 
-       4).array 26 element in min and max frequency value find 
-       5). differnce function create filter use min and max value 
-       6).return filtered ans
+       1) Initialize in string length. (array pair count
+       2) array size is fill(0)to start,(ex:26)
+       3) use nested loop to looping all substring 
+       4) array 26 element in min and max frequency value find 
+       5) differnce function create filter use min and max value 
+       6) return filtered ans
 
     
-
+code:
 
 var beautySum = function(s) {
     const len = s.length;
@@ -37,3 +68,12 @@ var beautySum = function(s) {
     
     return ans;
 };
+
+
+   output:
+     S = "aaac"
+      ans:3
+
+
+
+ 

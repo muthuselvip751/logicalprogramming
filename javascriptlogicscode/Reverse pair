@@ -12,28 +12,43 @@ Reverse pair:
 
 
     code:
-    function reverse(num)
-{
-	var rev_num = 0;
-	while (num > 0) {
-	rev_num = rev_num * 10 + num % 10;
-	num = parseInt(num / 10);
+
+
+	function reverse(num)
+	{
+		var reversenum = 0;
+	 
+	 
+		while (num > 0) {
+	 
+			reversenum = reversenum * 10 + num % 10;
+			num = parseInt(num / 10);
+		}
+		return reversenum;
 	}
-	return rev_num;
-}
-function countReverse(arr, n)
-{
-	var res = 0;
-	for (var i = 0; i < n; i++)
-		for (var j = i + 1; j < n; j++)
-			if (reverse(arr[i]) == arr[j]) {
-				res++;
-			}
+	
+	function countReverse(arr, n)
+	{
+		var res = 0;
+	 
+		for (var i = 0; i < n; i++)
+			for (var j = i + 1; j < n; j++)
+	 
+				if (reverse(arr[i]) == arr[j]) {
+					res++;
+				}
+	 
+		return res;
+	}
+	 
+	
+	var a = [ 16, 61, 12, 21, 25 ];
+	var n = a.length;
+	document.write( countReverse(a, n));
+	 
+	
 
-	return res;
-}
-var a = [ 16, 61, 12, 21, 25 ];
-var n = a.length;
-document.write( countReverse(a, n))
 
+O/P:
 
+    2     (16->61)/(12->21)
