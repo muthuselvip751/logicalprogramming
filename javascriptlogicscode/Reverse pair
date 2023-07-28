@@ -4,9 +4,10 @@ Reverse pair:
    Pseudocode:
 
      1.function to rev number
-      2.loop use iterate the value 
+      2.loop use iterate the  return reversenum value 
       3.find num length and arry value length and temp value find
-      4. another function is count reverser.
+      4. another function is count reverse.
+	  5.Nested loop use (i,j)
       5.(reverse(arr[i]) == arr[j])
       
 
@@ -40,7 +41,6 @@ Reverse pair:
 	 
 		return res;
 	}
-	 
 	
 	var a = [ 16, 61, 12, 21, 25 ];
 	var n = a.length;

@@ -16,9 +16,9 @@
 
 code:
 class Solution {
-    public String largestOddNumber(String num) {
-         int n = num.length();
-        for(int i=n-1;i>=0;i--){
+    public String largestOddNumber(String num) { // "12345"
+         int n = num.length(); //5 //length of the input num
+        for(int i=n-1;i>=0;i--){ //4
             if((num.charAt(i)-'0')%2 == 1)
             return num.substring(0,i+1);
         }
