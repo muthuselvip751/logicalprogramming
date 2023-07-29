@@ -1,1 +1,39 @@
 Duplicate in array:
+
+
+
+1)given function
+2)loop iterate to find given array element length.a[i].
+3)Nested for loop use a[i].
+4)if condition use a[i]==a[j] true mean a[i] value print.
+
+
+code:
+
+function Duplicates(arr) {
+  const duplicates = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] === arr[j] && !duplicates.includes(arr[i])) {
+        duplicates.push(arr[i]);
+      }
+    }
+  }
+
+  return duplicates;
+}
+
+
+const array = [3, 4, 4, 8, 5, 3];
+const duplicatesArray = Duplicates(array);
+console.log("Duplicates found:", duplicatesArray);
+
+
+o/p:
+3,4
+
+
+  my notes:
+
+    Push()===>>push is an array method that adds one are more elements to the end of an array. 

@@ -9,19 +9,20 @@ Pseudo code:
         5.if condition use a[i]==a[j] true mean a[i] value print.
 code:
 
-    class Duplicates{   //class name
-        Public static void main(string srgs[])//main statement
-        {
-            int a[]={3,4,4,8,5,3}//array value
-            for(int i=0;i<a.length;i++){ //
-                for (int j+1;j<a.length;j++)
-                {
-                    if(a[i]==a[j])
-                    System.out.println(a[i]);
+class Duplicates { //class name
+    public static void main(String[] args) {   //main statement
+        int a[] = {3, 4, 4, 8, 5, 3}; // array values
+
+        for (int i = 0; i < a.length; i++) {
+            for (int j = i + 1; j < a.length; j++) { //  "j+1" to "j = i + 1"
+                if (a[i] == a[j]) {
+                    System.out.println("Duplicate found: " + a[i]);
                 }
             }
         }
     }
+}
+
 
  output:
     3
@@ -32,7 +33,7 @@ code:
   myself:
              int a[]=   { 3  4  4  8  5  3 }
                           0  1  2  3  4  5-->>index value
-                          
+
 array(0):
 
          i              j 
