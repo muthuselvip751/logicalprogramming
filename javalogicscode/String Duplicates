@@ -1,0 +1,39 @@
+dupliacte in an String:
+          
+
+  Pseudocode:
+
+        1. given class name.
+        2.main statement.
+        3.loop iterate to find given string char element length.a[i].
+        4.Nested for loop use a[i].
+        5.if condition use a[i]==a[j] true mean a[i] value print.
+
+
+   code:
+    
+    class Duplicates {
+    public static void main(String[] args) {
+        String str = "hello"; // Input string
+
+        for (int i = 0; i < str.length(); i++) {
+            for (int j = i + 1; j < str.length(); j++) {  
+                //str.lenght--->a[i]
+                if (str.charAt(i) == str.charAt(j)) {
+                    // a[i]==a[j]
+                    System.out.println("Duplicate : " + str.charAt(i));
+                }
+            }
+        }
+    }
+}
+
+output:
+    duplicate ===>> l
+
+
+
+my notes:
+
+       *The charAt()==> method returns the character at the specified index in a string.
+

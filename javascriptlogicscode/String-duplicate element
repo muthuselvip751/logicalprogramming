@@ -1,0 +1,38 @@
+dupliacte in an String:
+          
+
+  Pseudocode:
+
+        1. given class name.
+        2.main statement.
+        3.loop iterate to find given string char element length.a[i].
+        4.Nested for loop use a[i].
+        5.if condition use a[i]==a[j] true mean a[i] value print.
+
+
+   code:
+    
+   function findDuplicateChars(str) {
+  for (let i = 0; i < str.length; i++) {
+    for (let j = i + 1; j < str.length; j++) {
+      if (str.charAt(i) === str.charAt(j)) {
+        console.log("Duplicate: " + str.charAt(i));
+      }
+    }
+  }
+}
+
+
+const inputString = "hello";
+findDuplicateChars(inputString);
+
+
+output:
+    duplicate ===>> l
+
+
+
+my notes:
+
+       *The charAt()==> method returns the character at the specified index in a string.
+
