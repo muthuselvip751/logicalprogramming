@@ -1,0 +1,9 @@
+Duplicate in array:
+
+Pseudo code:
+
+        1. given class name.
+        2.main statement.
+        3.loop iterate to find given array element length.a[i].
+        4.Nested for loop use a[i].
+        5.if condition use a[i]==a[j] true mean a[i] value print.

@@ -1,50 +1,100 @@
-
-
 Count good numbers:
 
 
-Pseudo code:
-       1.count add and even number.in N
-       2.power mode N number even->N+1/2 , odd->n/2.
-       3.even indices->5,odd indices->4.
-       4.powmod count even and even indices.
-       5.return powmod number.
-     
+my self:
 
-    #  my reff:
+    0-9 ===>>0,1,2,3,4,5,6,7,8,9
+   
+          ------->2,3,5,7(prime number)==>>4 prime number
+   
+      ------>0,2,4,6,8 ==>even numbers===>>5
+      
+      
+      
+      even indices--->5option(0,2,4,6,8)
+      odd indices--->4option(2,3,5,7)
+      
+       
+       0/5option,1/4option,2/5option,3/4option,4/5option
+          5one      4one      5two      4two    5three
+       
+       5^3 ==>3even         4^2==>2odd
+       
+       n+1/2 -----> even  ==>3
+       
+       n/2 ------> odd     ==>2
+       
+       
+       pow(5,even)   }   ===>log(n)
+       pow(4,odd)    }
 
-    #         0,1,2,3,4,5,6,7,8,9
-
-    #         even indices:5
-    #         odd indices:4
-
-    #  0,1,2,3,4     => n+1/2 =>odd     ,  n/2=>even
-
-    #  pow(5,even)
-    #  pow(4,odd)       
 
 
-Code:
-     
-     const ll = BigInt;
-     const int = parseInt;
-     const mod = ll(1e9 + 7);
-     const powm-od = (a, b, mod) => 
-{
-     let r = 1n; while (b > 0n)
-      {
-           if (b % 2n == 1) r = r * a % mod; 
-           b >>= 1n; a = a * a % mod;
-            }
-             return r; 
-             };
 
-   const countGoodNumbers = (n) =>
- {
-    let countEven = countOdd = int(n / 2);
-    //odd => n+1/2   --->   even=>n/2
-    if (n % 2 == 1) countEven++;
-    let res = powmod(5n, ll(countEven), mod) * powmod(4n, ll(countOdd), mod);
-    return Number(res % mod);
-};
-    
+      1e9 + 7==> is a shorthand notation for the number 1000000007.
+      MOD:==>The MOD constant with the value 1e9 + 7 is used in the context of modular arithmetic. 
+           It is used to keep the intermediate and final results within a manageable range, especially
+           when working with large numbers, to prevent integer overflow and to ensure that computations
+            do not exceed the available memory space.
+  
+  Math.floor()- The Math.floor() static method always rounds down and returns the largest integer less 
+                                                                     than or equal to a given number.      
+
+   
+Pseudocode:
+
+          1.check the given number is  prime or not.
+          2.create function to Calculate the count of good numbers in range low to high.
+          #  //1e9 + 7 is a simple mathematical expression, which evaluates to 1,000,000,007.
+          3.
+
+
+   code:       
+
+    function isPrime(n) {
+  if (n <= 1) return false;
+#   //not prime  // If the number n is less than or equal to 1,
+#  // it returns false. Numbers less than or equal to 1 are not considered prime.
+  if (n <= 3) return true; 
+#   //prime  If the number n is 2 or 3, it returns true. These two numbers are considered prime.
+  if (n % 2 === 0 || n % 3 === 0) return false;
+
+  for (let i = 5; i * i <= n; i += 6) {
+    if (n % i === 0 || n % (i + 2) === 0) return false;
+  }
+
+  return true;
+}
+
+function countGoodNumbers(low, high) { 
+# //this funtion Calculate the count of good numbers in range low to high.
+  const MOD = 1e9 + 7;
+  let oddNumbers = Math.floor((high + 1) / 2);
+#   //calculates the count of odd numbers in the range from 1 to high
+  let primeNumbers = isPrime(2) ? 1 : 0;
+#    // Consider 2 as a prime number
+
+  for (let i = 3; i <= high; i += 2) {
+     # i=3/i-add  number
+    if (isPrime(i)) primeNumbers++;
+  }
+
+  let result = 1; 
+#   //sets its initial value to 1.
+  while (primeNumbers > 0) {
+# //while loop that continues executing its code block as long as the condition primeNumbers > 0 is true. 
+    if (primeNumbers % 2 === 1) {
+      result = (result * oddNumbers) % MOD;
+    }
+    oddNumbers = (oddNumbers * oddNumbers) % MOD;
+    primeNumbers = Math.floor(primeNumbers / 2); //Return the largest integer less then or equal to given number
+#  //This count is stored in the variable oddNumbers, which is later used in the calculation of good numbers within the range.
+  }
+
+  return result.toString();
+}
+
+// Example usage:
+const low = 1;
+const high = 20;
+console.log("Count of good numbers:", countGoodNumbers(low, high));

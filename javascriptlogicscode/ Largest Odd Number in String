@@ -34,3 +34,10 @@ slice:
 
      *   Slice() is used to extract elements from an array and return a new array,
           and it would not modify the origin array.
+
+
+ Substring:
+   * A substring is a subset or part of another string  
+                             (or)
+   * Its is a contiguous sequence of character within a string    
+   ex:                  
